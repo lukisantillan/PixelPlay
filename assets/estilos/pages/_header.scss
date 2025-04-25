@@ -1,0 +1,50 @@
+@import "../utils/variables";
+
+header {
+    display: flex;
+
+    img {
+        width: 100px;
+        height: 120px;
+        margin-left: 100px;
+    }
+    .activo{
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/imagenes-principales/fondoMain.png) repeat-x; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+    }
+    .navbar {
+        //background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/imagenes-principales/fondoMain.png) repeat-x; 
+        top: 20px;
+        /* separación desde el borde superior */
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 100%;
+        /* o 80%, o un valor en px si querés */
+        max-width: 1200px;
+        z-index: 10;
+        padding: 1rem;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        padding: 1rem 2rem;
+        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+
+
+        .nav-item {
+            .nav-link {
+                color: $TextColorOne;
+                font-size: 1.5rem;
+                text-decoration: none;
+                margin: 0 1rem;
+                font-family: $tipoGrafiaText !important;
+
+                &:hover {
+                    color: $TertiaryColor;
+                }
+            }
+        }
+    }
+}
