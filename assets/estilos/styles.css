@@ -47,6 +47,14 @@ header .navbar .nav-item .nav-link:hover {
   color: #00ffff;
 }
 
+@keyframes mover-fondo {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
 main .seccion-principal {
   display: grid;
   grid-template-columns: repeat(2, 0.5fr);
@@ -98,8 +106,10 @@ main .seccion-principal .column2 {
   justify-content: center;
 }
 main .seccion-principal .column2 .pj {
-  position: relative; /* o absolute si querés ubicarlo con más control */
-  z-index: 2; /* está por encima */
+  position: relative;
+  /* o absolute si querés ubicarlo con más control */
+  z-index: 2;
+  /* está por encima */
   width: 400px;
 }
 main .seccion-principal .column2 .fuego {
@@ -107,11 +117,113 @@ main .seccion-principal .column2 .fuego {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1; /* está por debajo */
+  z-index: 1;
+  /* está por debajo */
   width: 700px;
 }
-main .seccion-principal .destacados {
-  background-color: white;
+main .section-destacados {
+  text-align: center;
+  background: url(../../assets/imagenes-principales/fondoInfinito.jpg) repeat-x;
+  background-size: cover;
+  padding-top: 60px;
+  width: 100%;
+  animation: mover-fondo 20s linear infinite;
+}
+main .section-destacados h2 {
+  grid-column: 1/3;
+  font-size: 3rem;
+  color: #0f0f0f;
+  font-family: "Pixelify Sans", sans-serif !important;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+main .section-destacados .destacados {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .section-destacados .destacados .des {
+  width: 90%;
+  padding: 200px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+  background: linear-gradient(#ff00ff, #00ffff);
+}
+main .section-destacados .destacados .destacado1 {
+  grid-row: 1/1;
+  grid-column: 1/2;
+  display: flex;
+}
+main .section-destacados .destacados .destacado1 img {
+  transform: translate(12%, -55%);
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-right: 200px;
+}
+main .section-destacados .destacados .destacado2 {
+  grid-row: 2/2;
+  grid-column: 2/3;
+}
+main .section-destacados .destacados .destacado2 img {
+  transform: translate(-88%, -55%);
+  width: 300px;
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+main .section-destacados .destacados .destacado3 {
+  grid-row: 3/3;
+  grid-column: 1/2;
+}
+main .section-destacados .destacados .destacado3 img {
+  width: 300px;
+  height: 400px;
+  transform: translate(-12%, -55%);
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+main .section-destacados .destacados .detalle-juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .section-destacados .destacados .detalle-juego h3 {
+  font-size: 2rem;
+  color: #0f0f0f;
+  font-family: "Pixelify Sans", sans-serif !important;
+  margin-top: 20px;
+}
+main .section-destacados .destacados .detalle-juego .estrellas {
+  font-size: 2rem;
+  color: #ffc107; /* amarillo tipo estrella dorada */
+  display: flex;
+}
+main .section-destacados .destacados .detalle-juego .estrella {
+  position: relative;
+}
+main .section-destacados .destacados .detalle-juego .estrella.media::after {
+  content: "★"; /* misma estrella */
+  color: #ffc107; /* gris, la parte vacía */
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */

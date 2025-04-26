@@ -1,36 +1,39 @@
 @import "../utils/variables";
-
+@import "../utils/animations";
 
 main {
-    
     .seccion-principal {
         display: grid;
         grid-template-columns: repeat(2, 0.5fr);
         grid-template-rows: repeat(1, 0.5fr);
         align-items: center;
         justify-content: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/imagenes-principales/fondoMain.png) repeat-x; 
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/imagenes-principales/fondoMain.png) repeat-x;
         padding-top: 200px;
+
         .column1 {
-            display: flex; 
+            display: flex;
             flex-direction: column;
             justify-content: space-between;
             flex-wrap: wrap;
             align-content: center;
-            .boton{
+
+            .boton {
                 background-color: $TertiaryColor;
                 text-align: center;
                 width: 200px;
                 padding: 20px;
                 border-radius: 10px;
                 margin-left: 100px;
-                a{
+
+                a {
                     text-decoration: none;
                     color: $PrimaryColor;
                     font-size: 1.5rem;
                     font-family: $tipoGrafiaText !important;
                 }
             }
+
             h1 {
                 font-size: 4.5rem;
                 text-align: start;
@@ -38,35 +41,163 @@ main {
                 color: $TextColorOne;
                 font-family: $tipoGrafiaText !important;
             }
-            p{
+
+            p {
                 font-size: 1.5rem;
                 margin-left: 100px;
                 color: $textColorTwo;
                 font-size: $tipografiaTittles;
             }
         }
-        .column2{
+
+        .column2 {
             grid-column: 2/4;
             align-items: center;
             position: relative;
-            .pj{
-                position: relative; /* o absolute si querés ubicarlo con más control */
-                z-index: 2; /* está por encima */
+
+            .pj {
+                position: relative;
+                /* o absolute si querés ubicarlo con más control */
+                z-index: 2;
+                /* está por encima */
                 width: 400px;
             }
-            .fuego{
+
+            .fuego {
                 position: absolute;
                 bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
-                z-index: 1; /* está por debajo */
+                z-index: 1;
+                /* está por debajo */
                 width: 700px;
             }
+
             display: flex;
             justify-content: center;
         }
-        .destacados{
-            background-color: white;
+    }
+
+    
+    
+
+    .section-destacados {          
+        text-align: center;
+        background: url(../../assets/imagenes-principales/fondoInfinito.jpg) repeat-x;
+        background-size: cover;
+        padding-top: 60px;
+        width: 100%;
+        animation: mover-fondo 20s linear infinite;
+        h2 {
+            grid-column: 1/3;
+            font-size: 3rem;
+            color: $PrimaryColor;
+            font-family: $tipoGrafiaText !important;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            font-weight: bold;
+        }
+
+        .destacados {
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            .des {
+                width: 90%;
+                padding: 200px;
+                margin-top: 20px;
+                margin-left: 20px;
+                border-radius: 20px;
+                background: linear-gradient($SecondaryColor, $TertiaryColor);
+            }
+
+
+            .destacado1 {
+                grid-row: 1/1;
+                grid-column: 1/2;
+                display: flex;
+                img {
+                    transform: translate(12%, -55%);
+                    width: 300px;
+                    height: 400px;
+                    position: absolute;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                    margin-right: 200px;
+                }
+                
+            }
+
+            .destacado2 {
+                grid-row: 2/2;
+                grid-column: 2/3;
+
+                img {
+                    transform: translate(-88%, -55%);
+                    width: 300px;
+                    position: absolute;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                }
+            }
+
+            .destacado3 {
+                grid-row: 3/3;
+                grid-column: 1/2;
+
+                img {
+                    width: 300px;
+                    height: 400px;
+                    transform: translate(-12%, -55%);
+                    position: absolute;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                    margin: 20px;
+                }
+            }
+
+            .detalle-juego{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                h3{
+                    font-size: 2rem;
+                    color: $PrimaryColor;
+                    font-family: $tipoGrafiaText !important;
+                    margin-top: 20px;
+                }
+
+                .estrellas {
+                    font-size: 2rem;
+                    color: #ffc107; /* amarillo tipo estrella dorada */
+                    display: flex;
+                  }
+                  
+                  .estrella {
+                    position: relative;
+                  }
+                  
+                  .estrella.media::after {
+                    content: '★'; /* misma estrella */
+                    color: #ffc107;   /* gris, la parte vacía */
+                    position: absolute;
+
+                    width: 50%;
+                    overflow: hidden;
+                  }
+            }
         }
     }
 }
