@@ -78,16 +78,18 @@ main {
         }
     }
 
-    
-    
 
-    .section-destacados {          
+
+
+    .section-destacados {
         text-align: center;
         background: url(../../assets/imagenes-principales/fondoInfinito.jpg) repeat-x;
         background-size: cover;
         padding-top: 60px;
+        padding-bottom: 60px;
         width: 100%;
         animation: mover-fondo 20s linear infinite;
+
         h2 {
             grid-column: 1/3;
             font-size: 3rem;
@@ -119,6 +121,14 @@ main {
                 margin-left: 20px;
                 border-radius: 20px;
                 background: linear-gradient($SecondaryColor, $TertiaryColor);
+
+                a {
+                    text-decoration: none;
+                    color: $PrimaryColor;
+                    font-size: 1.5rem;
+                    font-family: $tipoGrafiaText !important;
+                    transform: translate(-50%, -50%);
+                }
             }
 
 
@@ -126,6 +136,7 @@ main {
                 grid-row: 1/1;
                 grid-column: 1/2;
                 display: flex;
+
                 img {
                     transform: translate(12%, -55%);
                     width: 300px;
@@ -136,7 +147,7 @@ main {
                     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
                     margin-right: 200px;
                 }
-                
+
             }
 
             .destacado2 {
@@ -159,7 +170,7 @@ main {
                 img {
                     width: 300px;
                     height: 400px;
-                    transform: translate(-12%, -55%);
+                    transform: translate(-12%, -61%);
                     position: absolute;
                     border-radius: 20px;
                     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -167,12 +178,12 @@ main {
                 }
             }
 
-            .detalle-juego{
+            .detalle-juego {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                
-                h3{
+
+                h3 {
                     font-size: 2rem;
                     color: $PrimaryColor;
                     font-family: $tipoGrafiaText !important;
@@ -181,22 +192,102 @@ main {
 
                 .estrellas {
                     font-size: 2rem;
-                    color: #ffc107; /* amarillo tipo estrella dorada */
+                    color: #ffc107;
+                    /* amarillo tipo estrella dorada */
                     display: flex;
-                  }
-                  
-                  .estrella {
+                }
+
+                .estrella {
                     position: relative;
-                  }
-                  
-                  .estrella.media::after {
-                    content: '★'; /* misma estrella */
-                    color: #ffc107;   /* gris, la parte vacía */
+                }
+
+                .estrella.media::after {
+                    content: '★';
+                    /* misma estrella */
+                    color: #ffc107;
+                    /* gris, la parte vacía */
                     position: absolute;
 
                     width: 50%;
                     overflow: hidden;
-                  }
+                }
+            }
+        }
+    }
+
+    .comentariosComunidad {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        width: 100%;
+
+        h2 {
+            font-size: 3rem;
+            color: $PrimaryColor;
+            font-family: $tipoGrafiaText !important;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            font-weight: bold;
+        }
+
+        .comentario {
+            border-radius: 20px;
+            border: solid 2px $PrimaryColor;
+            padding: 80px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 40px;
+            
+
+            .usuario {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h3 {
+                    font-size: 1rem;
+                    color: $PrimaryColor;
+                    font-family: $tipografiaTittles;
+                    margin-top: 20px;
+                }
+
+                img {
+                    width: 80px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-left: 50px;
+
+                .estrellas {
+                    font-size: 2rem;
+                    color: #ffc107;
+                    /* amarillo tipo estrella dorada */
+                    display: flex;
+                }
+
+                .estrella {
+                    position: relative;
+                }
+
+                .estrella.media::after {
+                    content: '★';
+                    /* misma estrella */
+                    color: #ffc107;
+                    /* gris, la parte vacía */
+                    position: absolute;
+
+                    width: 50%;
+                    overflow: hidden;
+                }
             }
         }
     }

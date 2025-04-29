@@ -126,6 +126,7 @@ main .section-destacados {
   background: url(../../assets/imagenes-principales/fondoInfinito.jpg) repeat-x;
   background-size: cover;
   padding-top: 60px;
+  padding-bottom: 60px;
   width: 100%;
   animation: mover-fondo 20s linear infinite;
 }
@@ -160,6 +161,13 @@ main .section-destacados .destacados .des {
   border-radius: 20px;
   background: linear-gradient(#ff00ff, #00ffff);
 }
+main .section-destacados .destacados .des a {
+  text-decoration: none;
+  color: #0f0f0f;
+  font-size: 1.5rem;
+  font-family: "Pixelify Sans", sans-serif !important;
+  transform: translate(-50%, -50%);
+}
 main .section-destacados .destacados .destacado1 {
   grid-row: 1/1;
   grid-column: 1/2;
@@ -193,7 +201,7 @@ main .section-destacados .destacados .destacado3 {
 main .section-destacados .destacados .destacado3 img {
   width: 300px;
   height: 400px;
-  transform: translate(-12%, -55%);
+  transform: translate(-12%, -61%);
   position: absolute;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -212,15 +220,83 @@ main .section-destacados .destacados .detalle-juego h3 {
 }
 main .section-destacados .destacados .detalle-juego .estrellas {
   font-size: 2rem;
-  color: #ffc107; /* amarillo tipo estrella dorada */
+  color: #ffc107;
+  /* amarillo tipo estrella dorada */
   display: flex;
 }
 main .section-destacados .destacados .detalle-juego .estrella {
   position: relative;
 }
 main .section-destacados .destacados .detalle-juego .estrella.media::after {
-  content: "★"; /* misma estrella */
-  color: #ffc107; /* gris, la parte vacía */
+  content: "★";
+  /* misma estrella */
+  color: #ffc107;
+  /* gris, la parte vacía */
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
+}
+main .comentariosComunidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+main .comentariosComunidad h2 {
+  font-size: 3rem;
+  color: #0f0f0f;
+  font-family: "Pixelify Sans", sans-serif !important;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+main .comentariosComunidad .comentario {
+  border-radius: 20px;
+  border: solid 2px #0f0f0f;
+  padding: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+}
+main .comentariosComunidad .comentario .usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 50px;
+}
+main .comentariosComunidad .comentario .usuario h3 {
+  font-size: 1rem;
+  color: #0f0f0f;
+  font-family: "Press Start 2P", sans-serif;
+  margin-top: 20px;
+}
+main .comentariosComunidad .comentario .usuario img {
+  width: 80px;
+  height: 50px;
+  border-radius: 50%;
+}
+main .comentariosComunidad .comentario .usuario .estrellas {
+  font-size: 2rem;
+  color: #ffc107;
+  /* amarillo tipo estrella dorada */
+  display: flex;
+}
+main .comentariosComunidad .comentario .usuario .estrella {
+  position: relative;
+}
+main .comentariosComunidad .comentario .usuario .estrella.media::after {
+  content: "★";
+  /* misma estrella */
+  color: #ffc107;
+  /* gris, la parte vacía */
   position: absolute;
   width: 50%;
   overflow: hidden;
